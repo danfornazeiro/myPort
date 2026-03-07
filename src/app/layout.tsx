@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     description:
       "Desenvolvedor backend Java — APIs REST, Spring Security, JPA/Hibernate.",
     type: "website",
+    images: [
+      {
+        url: "https://frnzdev.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Felipe Fornazeiro - Backend Developer",
+      },
+    ],
   },
 };
 
