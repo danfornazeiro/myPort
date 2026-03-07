@@ -143,6 +143,11 @@ export const skillCategories: SkillCategory[] = [
         logo: `${DEVICONS}/github/github-original.svg`,
         color: "#e2e8f0",
       },
+      {
+        name: "Swagger",
+        logo: `${DEVICONS}/swagger/swagger-original.svg`,
+        color: "#2EF527",
+      },
     ],
   },
 ];
