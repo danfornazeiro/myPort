@@ -30,9 +30,9 @@ export function SectionTitle({
   const parts = highlight ? title.split(highlight) : [title];
 
   return (
-    <div ref={ref} className="fade-in-up mb-14 text-center">
+    <div ref={ref} className="fade-in-up mb-10 text-center sm:mb-12 md:mb-14">
       <span
-        className="mb-3 inline-block rounded-full px-3 py-1 text-xs font-medium tracking-widest uppercase"
+        className="mb-2 inline-block rounded-full px-2.5 py-1 text-[10px] font-medium tracking-widest uppercase sm:mb-3 sm:px-3 sm:text-xs"
         style={{
           background: "rgba(124,58,237,0.12)",
           border: "1px solid rgba(124,58,237,0.3)",
@@ -42,7 +42,7 @@ export function SectionTitle({
         {label}
       </span>
 
-      <h2 className="mt-2 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+      <h2 className="mt-2 px-4 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
         {parts[0]}
         {highlight && <span className="gradient-text">{highlight}</span>}
         {parts[1]}
@@ -50,7 +50,7 @@ export function SectionTitle({
 
       {description && (
         <p
-          className="mx-auto mt-4 max-w-2xl text-base leading-relaxed"
+          className="mx-auto mt-3 max-w-2xl px-4 text-sm leading-relaxed sm:mt-4 sm:text-base"
           style={{ color: "var(--muted)" }}
         >
           {description}

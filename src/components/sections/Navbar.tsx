@@ -43,20 +43,12 @@ export function Navbar() {
           : {}
       }
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 sm:py-4">
         {/* Logo */}
         <button
           onClick={() => handleNav("#home")}
-          className="flex items-center gap-2 text-lg font-bold tracking-tight text-white"
+          className="flex items-center gap-1.5 text-base font-bold tracking-tight text-white sm:gap-2 sm:text-lg cursor-pointer"
         >
-          <span
-            className="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-black"
-            style={{
-              background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
-            }}
-          >
-            FF
-          </span>
           <span>
             frnz<span className="gradient-text">dev</span>
           </span>
@@ -70,7 +62,7 @@ export function Navbar() {
               <li key={href}>
                 <button
                   onClick={() => handleNav(href)}
-                  className="relative text-sm font-medium transition-colors duration-200"
+                  className="relative text-sm font-medium transition-colors duration-200 cursor-pointer"
                   style={{
                     color: isActive ? "#a78bfa" : "rgba(255,255,255,0.6)",
                   }}

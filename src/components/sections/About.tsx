@@ -39,11 +39,14 @@ export function About() {
   const rightRef = useScrollAnimation<HTMLDivElement>(0.15);
 
   return (
-    <section id="about" className="relative py-28 px-6">
+    <section
+      id="about"
+      className="relative py-16 px-4 sm:py-20 sm:px-6 md:py-28"
+    >
       {/* subtle ambient */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-0 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full blur-3xl"
+        className="pointer-events-none absolute left-0 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full blur-3xl sm:h-64 sm:w-64"
         style={{ background: "rgba(124,58,237,0.07)" }}
       />
 
@@ -55,11 +58,11 @@ export function About() {
           description="Desenvolvedor backend apaixonado por resolver problemas complexos com soluções elegantes."
         />
 
-        <div className="mt-4 grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="mt-4 grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
           {/* ── Left — Text ── */}
-          <div ref={leftRef} className="fade-in-left space-y-5">
+          <div ref={leftRef} className="fade-in-left space-y-4 sm:space-y-5">
             <p
-              className="text-base leading-relaxed"
+              className="text-sm leading-relaxed sm:text-base"
               style={{ color: "rgba(255,255,255,0.65)" }}
             >
               Olá! Sou <strong className="text-white">Felipe Fornazeiro</strong>
@@ -70,7 +73,7 @@ export function About() {
               Spring Boot.
             </p>
             <p
-              className="text-base leading-relaxed"
+              className="text-sm leading-relaxed sm:text-base"
               style={{ color: "rgba(255,255,255,0.65)" }}
             >
               Meu objetivo é contribuir no desenvolvimento de sistemas e APIs
@@ -83,7 +86,7 @@ export function About() {
               integração com bancos relacionais.
             </p>
             <p
-              className="text-base leading-relaxed"
+              className="text-sm leading-relaxed sm:text-base"
               style={{ color: "rgba(255,255,255,0.65)" }}
             >
               Inglês avançado (leitura, escrita e fala) e Espanhol básico.
@@ -93,7 +96,7 @@ export function About() {
             <a
               href="/FelipeCurriculo.pdf"
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:scale-105"
+              className="inline-flex items-center gap-2 rounded-lg px-5 py-2.5 text-xs font-semibold text-white transition-all duration-200 hover:scale-105 sm:text-sm"
               style={{
                 background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
               }}
@@ -103,14 +106,17 @@ export function About() {
           </div>
 
           {/* ── Right — Cards ── */}
-          <div ref={rightRef} className="fade-in-right grid grid-cols-2 gap-4">
+          <div
+            ref={rightRef}
+            className="fade-in-right grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4"
+          >
             {HIGHLIGHTS.map(({ icon, title, desc }) => (
               <div
                 key={title}
-                className="glass glass-hover gradient-border rounded-xl p-5 transition-all duration-300"
+                className="glass glass-hover gradient-border rounded-xl p-4 transition-all duration-300 sm:p-5"
               >
                 <span
-                  className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg"
+                  className="mb-2 flex h-9 w-9 items-center justify-center rounded-lg sm:mb-3 sm:h-10 sm:w-10"
                   style={{
                     background: "rgba(124,58,237,0.15)",
                     color: "#a78bfa",
@@ -133,18 +139,18 @@ export function About() {
         </div>
 
         {/* ── Stats ── */}
-        <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-3 sm:mt-16 sm:grid-cols-4 sm:gap-4">
           {STATS.map(({ value, label }) => (
             <div
               key={label}
-              className="glass rounded-xl p-6 text-center transition-all duration-300 hover:scale-105"
+              className="glass rounded-lg p-4 text-center transition-all duration-300 hover:scale-105 sm:rounded-xl sm:p-6"
               style={{ border: "1px solid rgba(124,58,237,0.2)" }}
             >
-              <span className="gradient-text block text-3xl font-extrabold">
+              <span className="gradient-text block text-2xl font-extrabold sm:text-3xl">
                 {value}
               </span>
               <span
-                className="mt-1 block text-xs"
+                className="mt-1 block text-[10px] sm:text-xs"
                 style={{ color: "var(--muted)" }}
               >
                 {label}
@@ -154,14 +160,14 @@ export function About() {
         </div>
 
         {/* ── Formation ── */}
-        <div className="mt-12">
+        <div className="mt-10 sm:mt-12">
           <h3
-            className="mb-5 text-xs font-medium uppercase tracking-widest"
+            className="mb-4 text-xs font-medium uppercase tracking-widest sm:mb-5"
             style={{ color: "var(--muted)" }}
           >
-            // formação
+            {"// formação"}
           </h3>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 institution: "ETEC de Heliópolis",
@@ -194,7 +200,7 @@ export function About() {
             ].map(({ institution, course, period, icon, color }) => (
               <div
                 key={institution}
-                className="glass gradient-border rounded-xl p-5 transition-all duration-300 hover:scale-[1.02]"
+                className="glass gradient-border rounded-xl p-4 transition-all duration-300 hover:scale-[1.02] sm:p-5"
                 style={{ border: "1px solid rgba(255,255,255,0.07)" }}
               >
                 <div className="mb-3 flex items-center gap-2">

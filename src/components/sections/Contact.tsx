@@ -6,7 +6,8 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 
 const SOCIALS = [
   {
-    icon: <Github size={22} />,
+    icon: { mobile: 18, desktop: 22 },
+    iconComponent: Github,
     label: "GitHub",
     handle: "@frnzdev",
     href: "https://github.com/frnzdev",
@@ -14,7 +15,8 @@ const SOCIALS = [
     description: "Veja meus projetos e contribuicoes",
   },
   {
-    icon: <Linkedin size={22} />,
+    icon: { mobile: 18, desktop: 22 },
+    iconComponent: Linkedin,
     label: "LinkedIn",
     handle: "Felipe Fornazeiro",
     href: "https://linkedin.com/in/felipefornazeiro7",
@@ -22,7 +24,8 @@ const SOCIALS = [
     description: "Conecte-se comigo profissionalmente",
   },
   {
-    icon: <Mail size={22} />,
+    icon: { mobile: 18, desktop: 22 },
+    iconComponent: Mail,
     label: "E-mail",
     handle: "felipeacfornazeiro@gmail.com",
     href: "mailto:felipeacfornazeiro@gmail.com",
@@ -37,7 +40,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-28 px-6"
+      className="relative py-16 px-4 sm:py-20 sm:px-6 md:py-28"
       style={{
         background:
           "linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.05) 50%, transparent 100%)",
@@ -46,7 +49,7 @@ export function Contact() {
       {/* glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-0 h-64 w-64 -translate-x-1/2 rounded-full blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 h-48 w-48 -translate-x-1/2 rounded-full blur-3xl sm:h-64 sm:w-64"
         style={{ background: "rgba(124,58,237,0.1)" }}
       />
 
@@ -58,51 +61,65 @@ export function Contact() {
           description="Estou em busca de oportunidades como Desenvolvedor Junior ou Estagiario em Backend. Tem uma vaga, projeto ou so quer trocar uma ideia? Entre em contato!"
         />
 
-        <div ref={ref} className="fade-in-up space-y-4">
-          {SOCIALS.map(({ icon, label, handle, href, color, description }) => (
-            <a
-              key={label}
-              href={href}
-              target={label !== "E-mail" ? "_blank" : undefined}
-              rel="noopener noreferrer"
-              className="gradient-border flex items-center gap-5 rounded-xl p-5 transition-all duration-300 hover:scale-[1.02]"
-              style={{
-                background: "rgba(255,255,255,0.03)",
-                border: "1px solid rgba(255,255,255,0.07)",
-              }}
-            >
-              <span
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl"
+        <div ref={ref} className="fade-in-up space-y-3 sm:space-y-4">
+          {SOCIALS.map(
+            ({
+              iconComponent: Icon,
+              icon,
+              label,
+              handle,
+              href,
+              color,
+              description,
+            }) => (
+              <a
+                key={label}
+                href={href}
+                target={label !== "E-mail" ? "_blank" : undefined}
+                rel="noopener noreferrer"
+                className="gradient-border flex items-center gap-3 rounded-xl p-4 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] sm:gap-5 sm:p-5"
                 style={{
-                  background: "rgba(124,58,237,0.12)",
-                  border: "1px solid rgba(124,58,237,0.25)",
-                  color,
+                  background: "rgba(255,255,255,0.03)",
+                  border: "1px solid rgba(255,255,255,0.07)",
                 }}
               >
-                {icon}
-              </span>
-              <div className="min-w-0 flex-1">
-                <p
-                  className="text-xs font-medium"
-                  style={{ color: "var(--muted)" }}
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg sm:h-12 sm:w-12 sm:rounded-xl"
+                  style={{
+                    background: `${color}15`,
+                    border: `1px solid ${color}30`,
+                    color,
+                  }}
                 >
-                  {label}
-                </p>
-                <p className="truncate text-sm font-semibold text-white">
-                  {handle}
-                </p>
-                <p
-                  className="text-xs"
-                  style={{ color: "rgba(255,255,255,0.4)" }}
+                  <Icon size={icon.mobile} className="sm:hidden" />
+                  <Icon size={icon.desktop} className="hidden sm:block" />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <p
+                    className="text-[10px] font-medium sm:text-xs"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    {label}
+                  </p>
+                  <p className="truncate text-sm font-semibold text-white">
+                    {handle}
+                  </p>
+                  <p
+                    className="text-[10px] sm:text-xs"
+                    style={{ color: "rgba(255,255,255,0.4)" }}
+                  >
+                    {description}
+                  </p>
+                </div>
+                <span
+                  className="shrink-0 text-xs font-medium"
+                  style={{ color }}
                 >
-                  {description}
-                </p>
-              </div>
-              <span className="shrink-0 text-xs font-medium" style={{ color }}>
-                {`->`}
-              </span>
-            </a>
-          ))}
+                  {`->`}
+                </span>
+              </a>
+            ),
+          )}
         </div>
       </div>
     </section>
