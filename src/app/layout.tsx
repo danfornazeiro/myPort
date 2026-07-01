@@ -8,31 +8,24 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Felipe Fornazeiro | Backend Developer",
+  title: "Felipe Fornazeiro | Técnico em Desenvolvimento de Sistemas",
   description:
-    "Portfolio de Felipe Fornazeiro — desenvolvedor backend Java focado em Spring Boot, APIs REST e sistemas de autenticação.",
+    "Portfólio de Felipe Fornazeiro — estudante de Análise e Desenvolvimento de Sistemas, com experiência prática em aplicações Full Stack, APIs REST, Java, Spring Boot, React e Next.js.",
   authors: [{ name: "Felipe Fornazeiro" }],
   keywords: [
     "Java",
     "Spring Boot",
-    "Backend",
-    "Developer",
+    "React",
+    "Next.js",
+    "Desenvolvimento Full Stack",
     "Portfolio",
     "Felipe Fornazeiro",
   ],
   openGraph: {
-    title: "Felipe Fornazeiro | Backend Developer",
+    title: "Felipe Fornazeiro | Técnico em Desenvolvimento de Sistemas",
     description:
-      "Desenvolvedor backend Java — APIs REST, Spring Security, JPA/Hibernate.",
+      "Estudante de ADS e Técnico em Desenvolvimento de Sistemas com projetos em Java, Spring Boot, Angular, React, Next.js e SQL.",
     type: "website",
-    images: [
-      {
-        url: "https://frnzdev.vercel.app/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Felipe Fornazeiro - Backend Developer",
-      },
-    ],
   },
 };
 

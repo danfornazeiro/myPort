@@ -3,6 +3,30 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { skillCategories } from "@/data/skills";
+import { BookOpenCheck, Code2, LayoutList, Wrench } from "lucide-react";
+
+const COMPETENCIES = [
+  {
+    icon: <LayoutList size={18} />,
+    title: "Análise e levantamento de requisitos",
+    description: "Estruturação de necessidades, objetivos e escopo de soluções.",
+  },
+  {
+    icon: <Code2 size={18} />,
+    title: "Modelagem de sistemas",
+    description: "Definição de fluxos, integrações e organização lógica da aplicação.",
+  },
+  {
+    icon: <BookOpenCheck size={18} />,
+    title: "Documentação técnica",
+    description: "Registro claro de regras, rotas, processos e decisões do projeto.",
+  },
+  {
+    icon: <Wrench size={18} />,
+    title: "Modelagem de banco de dados",
+    description: "Estruturação de dados em SQL, relacional e persistência organizada.",
+  },
+];
 
 export function Skills() {
   const wrapRef = useScrollAnimation<HTMLDivElement>(0.1);
@@ -10,18 +34,18 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="relative py-16 px-4 sm:py-20 sm:px-6 md:py-28"
+      className="relative py-20 px-4 sm:py-24 sm:px-6 md:py-32"
       style={{
         background:
-          "linear-gradient(180deg, transparent 0%, rgba(124,58,237,0.04) 50%, transparent 100%)",
+          "linear-gradient(180deg, transparent 0%, rgba(96,165,250,0.05) 50%, transparent 100%)",
       }}
     >
       <div className="mx-auto max-w-6xl">
         <SectionTitle
-          label="// tecnologias"
+          label="// tecnologias e competências"
           title="Minha "
           highlight="stack"
-          description="Ferramentas e tecnologias que uso no dia a dia para construir soluções sólidas."
+          description="Ferramentas, linguagens e competências diretamente alinhadas ao currículo."
         />
 
         <div ref={wrapRef} className="fade-in-up space-y-8 sm:space-y-10">
@@ -40,7 +64,7 @@ export function Skills() {
               >
                 <h3
                   className="mb-3 text-xs font-medium uppercase tracking-widest sm:mb-4"
-                  style={{ color: isSubcategory ? "#a78bfa" : "var(--muted)" }}
+                  style={{ color: isSubcategory ? "#dbeafe" : "rgba(255,255,255,0.55)" }}
                 >
                   {isSubcategory ? `↳ ${subcategoryLabel}` : title}
                 </h3>
@@ -49,14 +73,10 @@ export function Skills() {
                   {skills.map(({ name, logo, color }) => (
                     <div
                       key={name}
-                      className="gradient-border group flex flex-col items-center gap-2 rounded-xl p-3 text-center transition-all duration-300 hover:scale-105 sm:gap-2.5 sm:p-4"
-                      style={{
-                        background: "rgba(255,255,255,0.03)",
-                        border: "1px solid rgba(255,255,255,0.07)",
-                      }}
+                      className="glass-surface gradient-border group flex flex-col items-center gap-2 rounded-[1.25rem] p-3 text-center transition-all duration-300 hover:-translate-y-1 sm:gap-2.5 sm:p-4"
                     >
                       <div
-                        className="flex h-9 w-9 items-center justify-center rounded-lg sm:h-10 sm:w-10"
+                        className="flex h-9 w-9 items-center justify-center rounded-2xl sm:h-10 sm:w-10"
                         style={{
                           background: `${color}18`,
                           border: `1px solid ${color}30`,
@@ -77,7 +97,7 @@ export function Skills() {
                       </div>
                       <span
                         className="text-[10px] font-medium leading-tight sm:text-xs"
-                        style={{ color: "rgba(255,255,255,0.75)" }}
+                        style={{ color: "rgba(255,255,255,0.78)" }}
                       >
                         {name}
                       </span>
@@ -87,6 +107,30 @@ export function Skills() {
               </div>
             ),
           )}
+        </div>
+
+        <div className="mt-10 sm:mt-12">
+          <h3
+            className="mb-4 text-xs font-medium uppercase tracking-[0.28em] sm:mb-5"
+            style={{ color: "rgba(255,255,255,0.55)" }}
+          >
+            Competências
+          </h3>
+          <div className="grid gap-4 md:grid-cols-2">
+            {COMPETENCIES.map(({ icon, title, description }) => (
+              <div key={title} className="glass-surface gradient-border rounded-[1.35rem] p-4 sm:p-5">
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 text-white/90">
+                    {icon}
+                  </span>
+                  <h4 className="text-sm font-semibold text-white">{title}</h4>
+                </div>
+                <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.64)" }}>
+                  {description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

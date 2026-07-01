@@ -18,12 +18,12 @@ export function Badge({ children, color, className = "" }: BadgeProps) {
     : {
         background: "rgba(255,255,255,0.06)",
         border: "1px solid rgba(255,255,255,0.1)",
-        color: "rgba(255,255,255,0.7)",
+        color: "rgba(255,255,255,0.74)",
       };
 
   return (
     <span
-      className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-medium sm:px-2.5 sm:text-xs ${className}`}
+      className={`inline-block rounded-full px-2.5 py-1 text-[10px] font-medium backdrop-blur-sm sm:px-3 sm:text-xs ${className}`}
       style={style}
     >
       {children}

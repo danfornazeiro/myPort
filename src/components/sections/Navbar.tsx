@@ -7,7 +7,7 @@ import { useActiveSection } from "@/hooks/useActiveSection";
 const NAV_LINKS = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "Sobre" },
-  { href: "#skills", label: "Skills" },
+  { href: "#skills", label: "Tecnologias" },
   { href: "#projects", label: "Projetos" },
   { href: "#contact", label: "Contato" },
 ];
@@ -36,9 +36,9 @@ export function Navbar() {
       style={
         scrolled
           ? {
-              background: "rgba(10,10,10,0.85)",
-              backdropFilter: "blur(16px)",
-              borderBottom: "1px solid rgba(255,255,255,0.06)",
+              background: "rgba(5,6,10,0.72)",
+              backdropFilter: "blur(20px)",
+              borderBottom: "1px solid rgba(255,255,255,0.08)",
             }
           : {}
       }
@@ -47,11 +47,10 @@ export function Navbar() {
         {/* Logo */}
         <button
           onClick={() => handleNav("#home")}
-          className="flex items-center gap-1.5 text-base font-bold tracking-tight text-white sm:gap-2 sm:text-lg cursor-pointer"
+          className="glass-surface flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-2 text-base font-semibold tracking-tight text-white sm:gap-2 sm:px-4 sm:text-lg"
         >
-          <span>
-            frnz<span className="gradient-text">dev</span>
-          </span>
+          <span className="gradient-text">Felipe</span>
+          <span>Fornazeiro</span>
         </button>
 
         {/* Desktop links */}
@@ -62,17 +61,18 @@ export function Navbar() {
               <li key={href}>
                 <button
                   onClick={() => handleNav(href)}
-                  className="relative text-sm font-medium transition-colors duration-200 cursor-pointer"
+                  className="relative cursor-pointer text-sm font-medium transition-colors duration-200"
                   style={{
-                    color: isActive ? "#a78bfa" : "rgba(255,255,255,0.6)",
+                    color: isActive ? "#dbeafe" : "rgba(255,255,255,0.62)",
                   }}
                 >
                   {label}
                   {isActive && (
                     <span
-                      className="absolute -bottom-1 left-0 right-0 h-px"
+                      className="absolute -bottom-2 left-1/2 h-px w-3/4 -translate-x-1/2"
                       style={{
-                        background: "linear-gradient(90deg, #7c3aed, #06b6d4)",
+                        background:
+                          "linear-gradient(90deg, rgba(255,255,255,0.2), rgba(96,165,250,0.95), rgba(255,255,255,0.2))",
                       }}
                     />
                   )}
@@ -85,9 +85,10 @@ export function Navbar() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden rounded-lg px-4 py-2 text-sm font-semibold text-white transition-all duration-200 md:block"
+          className="glass-surface hidden rounded-full px-4 py-2 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 md:block"
           style={{
-            background: "linear-gradient(135deg, #7c3aed, #06b6d4)",
+            background:
+              "linear-gradient(135deg, rgba(255,255,255,0.12), rgba(96,165,250,0.16))",
           }}
           onClick={(e) => {
             e.preventDefault();
@@ -99,7 +100,7 @@ export function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="text-white md:hidden"
+          className="glass-surface rounded-full p-2 text-white md:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -112,7 +113,7 @@ export function Navbar() {
         <div
           className="md:hidden"
           style={{
-            background: "rgba(10,10,10,0.96)",
+            background: "rgba(5,6,10,0.94)",
             borderBottom: "1px solid rgba(255,255,255,0.08)",
           }}
         >
@@ -121,8 +122,8 @@ export function Navbar() {
               <li key={href}>
                 <button
                   onClick={() => handleNav(href)}
-                  className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors"
-                  style={{ color: "rgba(255,255,255,0.8)" }}
+                  className="block w-full rounded-xl px-3 py-3 text-left text-sm font-medium transition-colors hover:bg-white/10"
+                  style={{ color: "rgba(255,255,255,0.84)" }}
                 >
                   {label}
                 </button>
