@@ -118,7 +118,6 @@ export function About() {
           label="// sobre mim"
           title="Quem "
           highlight="sou eu"
-          description="Resumo, formação, experiência, cursos complementares e competências refletidos exatamente a partir do currículo anexado."
         />
 
         <div className="mt-4 grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
